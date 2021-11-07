@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"github.com/DanielTrondoli/My-Finance-Server/model/transaction"
-	"github.com/DanielTrondoli/My-Finance-Server/model/util"
+	"github.com/DanielTrondoli/My-Finance-Server/util"
 )
 
 // GetTransaction blablabal
