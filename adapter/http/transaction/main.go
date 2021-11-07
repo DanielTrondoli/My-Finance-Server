@@ -5,11 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"time"
 
 	"github.com/DanielTrondoli/My-Finance-Server/model/transaction"
+	"github.com/DanielTrondoli/My-Finance-Server/model/util"
 )
 
+// GetTransaction blablabal
 func GetTransaction(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != "GET" {
@@ -19,9 +20,7 @@ func GetTransaction(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-type", "application/json")
 
-	var layout = "2006-01-02T15:04:05"
-
-	dateRecived, _ := time.Parse(layout, "1992-11-07T16:52:00")
+	dateRecived := util.StringToTime("1992-11-07T16:52:00")
 
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
@@ -36,6 +35,7 @@ func GetTransaction(w http.ResponseWriter, r *http.Request) {
 
 }
 
+// CreateTransactions blablabal
 func CreateTransactions(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != "POST" {
